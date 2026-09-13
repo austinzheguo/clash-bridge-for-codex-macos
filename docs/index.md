@@ -18,13 +18,13 @@ This is a third-party workaround for some environments, not a promise that every
 
 ## Start here
 
-- [English README](../README.md)
-- [中文 README](../README.zh-CN.md)
+- [English README](https://github.com/austinzheguo/clash-bridge-for-codex-macos/blob/main/README.md)
+- [中文 README](https://github.com/austinzheguo/clash-bridge-for-codex-macos/blob/main/README.zh-CN.md)
 - [FAQ](faq.md) · [中文 FAQ](faq.zh-CN.md)
 - [Installation and troubleshooting](troubleshooting.md) · [故障排查](troubleshooting.zh-CN.md)
 - [How it works](how-it-works.md)
 - [GitHub repository]({{ site.github.repository_url }})
 - [Releases]({{ site.github.repository_url }}/releases)
-- [Related upstream Codex issues]({{ site.github.repository_url }}/issues)
+- [Related upstream Codex issue: macOS system-proxy WebSocket behavior](https://github.com/openai/codex/issues/14080)
 
 Clash Bridge is not affiliated with OpenAI, ChatGPT, Codex, Clash Verge, Mihomo, or Shadowrocket. It does not modify the official app or proxy configuration.
