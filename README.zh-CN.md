@@ -20,7 +20,14 @@ Clash Bridge 会读取当前 macOS HTTP/HTTPS System Proxy，只把代理环境�
 
 英文用户可能会搜索 Codex Clash Verge, Codex reconnecting, Codex System Proxy, Codex macOS proxy, Codex HTTP_PROXY, Codex HTTPS_PROXY, Codex WebSocket proxy, or ChatGPT Desktop Codex proxy。
 
-相关 upstream context：[macOS launchd/system-proxy WebSocket instability](https://github.com/openai/codex/issues/14080)、[Finder 启动时可能缺少 shell proxy environment](https://github.com/openai/codex/issues/30695)、以及 [Responses WebSocket retries before HTTP fallback](https://github.com/openai/codex/issues/19821)。Clash Bridge 是独立的第三方 workaround，不是 OpenAI 官方修复。
+## 相关上游问题
+
+以下 OpenAI Codex 官方仓库 issue 描述了与 macOS System Proxy、GUI proxy environment、WebSocket reconnect 或代理路由类似的问题。Clash Bridge 不是这些 issue 的官方修复，而是一个经过实际测试的 process-scoped workaround：
+
+- [macOS launchd/system-proxy WebSocket instability](https://github.com/openai/codex/issues/14080)
+- [Finder 启动时可能缺少 shell proxy environment](https://github.com/openai/codex/issues/30695)
+- [System proxy handling in the Desktop App app-server](https://github.com/openai/codex/issues/39237)
+- [Proxy environment and connectivity behavior](https://github.com/openai/codex/issues/13682)
 
 Bridge 的工作流程是：
 

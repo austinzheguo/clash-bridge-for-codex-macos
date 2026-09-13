@@ -6,7 +6,7 @@
 
 [中文说明 → README.zh-CN.md](README.zh-CN.md)
 
-An unofficial macOS launcher for users whose Codex mode repeatedly shows `Reconnecting 1/5 ... 5/5`, connects slowly, or waits a long time when using Clash Verge / Clash Verge Rev with macOS System Proxy.
+A lightweight unofficial macOS launcher that helps Codex mode in the ChatGPT desktop app reliably use the active macOS System Proxy when it repeatedly shows `Reconnecting 1/5 ... 5/5`, connects slowly, or waits a long time behind Clash Verge / Clash Verge Rev.
 
 Typical symptoms:
 
@@ -20,7 +20,14 @@ Clash Bridge is an unofficial launcher for Codex mode in the ChatGPT desktop app
 
 The symptom is also commonly described as Codex Clash reconnecting, Codex Clash Verge reconnecting, Codex macOS proxy trouble, Codex System Proxy trouble, or a Codex WebSocket proxy problem. See the [FAQ](docs/faq.md), [Chinese FAQ](docs/faq.zh-CN.md), and [troubleshooting guide](docs/troubleshooting.md).
 
-Related upstream context: [macOS launchd/system-proxy WebSocket instability](https://github.com/openai/codex/issues/14080), [Finder-launched Codex missing shell proxy environment](https://github.com/openai/codex/issues/30695), and [Responses WebSocket retries before HTTP fallback](https://github.com/openai/codex/issues/19821). Clash Bridge is an independent workaround, not an OpenAI fix.
+## Related upstream issues
+
+The following OpenAI Codex repository issues describe related macOS System Proxy, GUI proxy environment, WebSocket reconnect, or proxy-routing behavior. Clash Bridge is an independent third-party workaround, not an official fix for these issues:
+
+- [macOS launchd/system-proxy WebSocket instability](https://github.com/openai/codex/issues/14080)
+- [Finder-launched Codex missing shell proxy environment](https://github.com/openai/codex/issues/30695)
+- [System proxy handling in the Desktop App app-server](https://github.com/openai/codex/issues/39237)
+- [Proxy environment and connectivity behavior](https://github.com/openai/codex/issues/13682)
 
 The Bridge:
 
@@ -29,7 +36,7 @@ The Bridge:
 3. passes `HTTP_PROXY`, `HTTPS_PROXY`, `http_proxy`, `https_proxy`, `NO_PROXY`, and `no_proxy` only to the Codex process tree;
 4. starts the official ChatGPT desktop app (Codex mode) and exits.
 
-It is not a proxy server, VPN, Clash node, modified Codex, or OpenAI tool. It does not modify Clash, Shadowrocket, `~/.codex/.env`, global launchctl environment, or the official Codex.app. It does not hardcode common proxy ports.
+It is not a proxy server, VPN, Clash node, modified Codex, or OpenAI tool. It does not modify Clash, Shadowrocket, `~/.codex/.env`, global launchctl environment, or the official OpenAI desktop app. It does not hardcode common proxy ports.
 
 ## Observed development-machine results
 

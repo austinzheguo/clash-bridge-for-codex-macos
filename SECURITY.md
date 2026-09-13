@@ -10,7 +10,7 @@ The launcher:
 - does not upload proxy configuration;
 - does not contact a project server;
 - does not modify global `launchctl` proxy environment;
-- does not modify the official Codex.app.
+- does not modify the official OpenAI desktop app.
 
 At launch it reads the enabled state, host, and port of the current macOS HTTP/HTTPS System Proxy and checks whether the local listener is reachable. It then passes process-scoped proxy variables only to the Codex process tree.
 

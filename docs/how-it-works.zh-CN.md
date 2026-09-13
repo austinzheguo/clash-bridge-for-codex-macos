@@ -7,7 +7,7 @@ macOS 系统代理
 Clash Bridge
         | HTTP_PROXY / HTTPS_PROXY
         v
-官方 Codex.app
+官方 ChatGPT Desktop App（Codex mode）
         |
         v
 Clash / Shadowrocket
