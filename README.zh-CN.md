@@ -16,9 +16,7 @@ Clash Bridge 是一个非官方的 Codex mode 启动器，适用于以下情况�
 
 Clash Bridge 会读取当前 macOS HTTP/HTTPS System Proxy，只把代理环境传递给 Codex 进程，不修改全局代理环境。它适用于部分具有上述症状的环境，不承诺所有用户都存在相同根因。
 
-中文用户也可能搜索：Codex 重新连接、Codex 正在重新连接、Codex 一直重新连接、Codex 反复重新连接、Codex 重新连接 1/5、Codex 重新连接 2/5、Codex 重新连接 5/5、Codex Clash、Codex Clash Verge、Codex Clash Verge Rev、Clash Verge Codex、Codex 代理、Codex macOS 代理、Codex 系统代理、Codex System Proxy、Codex 连接不上、Codex 无法连接、Codex 连接很慢、Codex 连接慢、Codex 等待很久、Codex 新会话很慢、Codex 一直转圈、Codex 网络错误、Codex Clash 重连、Codex Clash 重新连接、Codex Clash Verge 重新连接、“Clash 开着但 Codex 不能用”以及“浏览器正常 Codex 不能连接”。
-
-英文用户可能会搜索 Codex Clash Verge, Codex reconnecting, Codex System Proxy, Codex macOS proxy, Codex HTTP_PROXY, Codex HTTPS_PROXY, Codex WebSocket proxy, or ChatGPT Desktop Codex proxy。
+如果你遇到 Codex 一直重新连接、Codex 重新连接 1/5，或 Codex Clash Verge 下 Codex 连接慢，这份说明针对的是 Codex 系统代理的 macOS 使用场景。
 
 ## 相关上游问题
 

@@ -1,6 +1,6 @@
 # Clash Bridge for Codex
 
-### A lightweight unofficial macOS launcher that helps Codex Desktop reliably use the active macOS System Proxy.
+### A lightweight unofficial macOS launcher that helps Codex mode in the ChatGPT desktop app reliably use the active macOS System Proxy.
 
 > **Unofficial third-party project. Not affiliated with or endorsed by OpenAI or Clash Verge Rev.**
 
@@ -49,9 +49,7 @@ It is not a proxy server, VPN, Clash node, modified Codex, or OpenAI tool. It do
 
 These are developer-machine observations, not a performance guarantee for every network or macOS configuration.
 
-## Search terms users may recognize
-
-English users may describe this as Codex Clash, Codex Clash Verge, Codex Clash Verge Rev, Codex reconnect, Codex reconnecting, Codex Reconnecting 1/5, Codex Reconnecting 2/5, Codex Reconnecting 5/5, Codex keeps reconnecting, Codex stuck reconnecting, Codex slow connection, Codex takes a long time to connect, Codex macOS proxy, Codex System Proxy, Codex macOS System Proxy, Codex HTTP_PROXY, Codex HTTPS_PROXY, Codex WebSocket proxy, Codex Clash System Proxy, Codex Clash TUN, ChatGPT Codex Clash, ChatGPT Desktop Codex proxy, or Clash Verge Codex reconnecting.
+If you are looking for a Codex Clash Verge or Codex System Proxy fix, this project is aimed at the macOS proxy case where Codex Reconnecting 1/5 through 5/5 appears or Codex macOS proxy connections take too long.
 
 ## Compatibility
 
