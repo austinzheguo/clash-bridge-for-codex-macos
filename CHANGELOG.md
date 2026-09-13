@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.0 release notes
+
+For macOS users experiencing Codex `Reconnecting 1/5 ... 5/5` behind Clash Verge System Proxy.
+
+适用于 macOS + Clash Verge System Proxy 环境下 Codex 反复显示“重新连接 / Reconnecting 1/5 ... 5/5”的部分场景。
+
+This release is an unofficial process-scoped launcher for Codex mode in the ChatGPT desktop app. It does not claim to fix every reconnecting or slow-connection cause.
+
 ## 1.1.0 RC2
 
 - Renamed the installed app display name to `Clash Bridge` while retaining the project name `Clash Bridge for Codex`.

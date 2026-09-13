@@ -6,7 +6,21 @@
 
 [中文说明 → README.zh-CN.md](README.zh-CN.md)
 
-Clash Bridge is an unofficial launcher for Codex mode. It is for a macOS setup where browsers and ChatGPT work through Clash Verge / Clash Verge Rev or Shadowrocket, while Codex mode in the ChatGPT desktop app repeatedly shows `Reconnecting 1/5 ... 5/5` or takes one to two minutes to become usable under System Proxy.
+An unofficial macOS launcher for users whose Codex mode repeatedly shows `Reconnecting 1/5 ... 5/5`, connects slowly, or waits a long time when using Clash Verge / Clash Verge Rev with macOS System Proxy.
+
+Typical symptoms:
+
+- the browser works normally;
+- ChatGPT works normally;
+- Clash Verge System Proxy is enabled and TUN is disabled;
+- Codex keeps reconnecting or is stuck reconnecting;
+- a new Codex session takes tens of seconds or around one to two minutes to connect.
+
+Clash Bridge is an unofficial launcher for Codex mode in the ChatGPT desktop app. It reads the active macOS HTTP/HTTPS System Proxy and passes a process-scoped proxy environment to Codex. It does not promise that every Codex slow connection has the same cause.
+
+The symptom is also commonly described as Codex Clash reconnecting, Codex Clash Verge reconnecting, Codex macOS proxy trouble, Codex System Proxy trouble, or a Codex WebSocket proxy problem. See the [FAQ](docs/faq.md), [Chinese FAQ](docs/faq.zh-CN.md), and [troubleshooting guide](docs/troubleshooting.md).
+
+Related upstream context: [macOS launchd/system-proxy WebSocket instability](https://github.com/openai/codex/issues/14080), [Finder-launched Codex missing shell proxy environment](https://github.com/openai/codex/issues/30695), and [Responses WebSocket retries before HTTP fallback](https://github.com/openai/codex/issues/19821). Clash Bridge is an independent workaround, not an OpenAI fix.
 
 The Bridge:
 
@@ -27,6 +41,10 @@ It is not a proxy server, VPN, Clash node, modified Codex, or OpenAI tool. It do
 | Bridge with Shadowrocket | ~4–12s, 0 reconnect |
 
 These are developer-machine observations, not a performance guarantee for every network or macOS configuration.
+
+## Search terms users may recognize
+
+English users may describe this as Codex Clash, Codex Clash Verge, Codex Clash Verge Rev, Codex reconnect, Codex reconnecting, Codex Reconnecting 1/5, Codex Reconnecting 2/5, Codex Reconnecting 5/5, Codex keeps reconnecting, Codex stuck reconnecting, Codex slow connection, Codex takes a long time to connect, Codex macOS proxy, Codex System Proxy, Codex macOS System Proxy, Codex HTTP_PROXY, Codex HTTPS_PROXY, Codex WebSocket proxy, Codex Clash System Proxy, Codex Clash TUN, ChatGPT Codex Clash, ChatGPT Desktop Codex proxy, or Clash Verge Codex reconnecting.
 
 ## Compatibility
 
@@ -50,6 +68,8 @@ These are developer-machine observations, not a performance guarantee for every 
 5. Enable the desired macOS System Proxy.
 6. Fully quit any existing ChatGPT/Codex process.
 7. Double-click `Clash Bridge.app`.
+
+More entry points: [FAQ](docs/faq.md), [Chinese FAQ](docs/faq.zh-CN.md), [How it works](docs/how-it-works.md), [Troubleshooting](docs/troubleshooting.md), and the [static project landing page](docs/index.md).
 
 To verify a downloaded release:
 

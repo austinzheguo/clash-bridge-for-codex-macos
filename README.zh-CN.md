@@ -11,7 +11,16 @@ Clash Bridge 是一个非官方的 Codex mode 启动器，适用于以下情况�
 - System Proxy 开启、TUN 关闭；
 - 浏览器与 ChatGPT 正常；
 - ChatGPT Desktop App 中的 Codex mode（包括旧版 Codex.app）反复出现 `Reconnecting 1/5 ... 5/5`；
-- Codex 新会话可能等待约 1–2 分钟。
+- Codex 一直重新连接、反复重新连接，或显示 `Reconnecting 1/5 → 2/5 → ... → 5/5`；
+- Codex 连接很慢、一直转圈、新会话等待几十秒到约两分钟。
+
+Clash Bridge 会读取当前 macOS HTTP/HTTPS System Proxy，只把代理环境传递给 Codex 进程，不修改全局代理环境。它适用于部分具有上述症状的环境，不承诺所有用户都存在相同根因。
+
+中文用户也可能搜索：Codex 重新连接、Codex 正在重新连接、Codex 一直重新连接、Codex 反复重新连接、Codex 重新连接 1/5、Codex 重新连接 2/5、Codex 重新连接 5/5、Codex Clash、Codex Clash Verge、Codex Clash Verge Rev、Clash Verge Codex、Codex 代理、Codex macOS 代理、Codex 系统代理、Codex System Proxy、Codex 连接不上、Codex 无法连接、Codex 连接很慢、Codex 连接慢、Codex 等待很久、Codex 新会话很慢、Codex 一直转圈、Codex 网络错误、Codex Clash 重连、Codex Clash 重新连接、Codex Clash Verge 重新连接、“Clash 开着但 Codex 不能用”以及“浏览器正常 Codex 不能连接”。
+
+英文用户可能会搜索 Codex Clash Verge, Codex reconnecting, Codex System Proxy, Codex macOS proxy, Codex HTTP_PROXY, Codex HTTPS_PROXY, Codex WebSocket proxy, or ChatGPT Desktop Codex proxy。
+
+相关 upstream context：[macOS launchd/system-proxy WebSocket instability](https://github.com/openai/codex/issues/14080)、[Finder 启动时可能缺少 shell proxy environment](https://github.com/openai/codex/issues/30695)、以及 [Responses WebSocket retries before HTTP fallback](https://github.com/openai/codex/issues/19821)。Clash Bridge 是独立的第三方 workaround，不是 OpenAI 官方修复。
 
 Bridge 的工作流程是：
 
@@ -60,6 +69,8 @@ Bridge 退出
 4. 开启所需的 macOS System Proxy。
 5. 完全退出已有 Codex。
 6. 双击 `Clash Bridge.app`。
+
+更多入口：[中文 FAQ](docs/faq.zh-CN.md)、[English FAQ](docs/faq.md)、[工作原理](docs/how-it-works.zh-CN.md)、[故障排查](docs/troubleshooting.zh-CN.md) 和 [项目首页](docs/index.md)。
 
 校验下载文件：
 
