@@ -1,6 +1,6 @@
 # Release Candidate Report
 
-Status: **READY FOR PUBLIC-003 REVIEW**
+Status: **PUBLIC-003 COMPLETE**
 
 ## Identity
 
@@ -30,7 +30,7 @@ Status: **READY FOR PUBLIC-003 REVIEW**
 - The launcher does not modify the official OpenAI desktop app and does not use global `launchctl setenv` or `unsetenv`.
 - RC2 real regression `PUBLIC-RC2-CLASH-01`: approximately 10 seconds, zero reconnects, no error, normal ChatGPT/web/Clash, global environment unset.
 - RC2 real regression `PUBLIC-RC2-SHADOWROCKET-01`: approximately 6 seconds, zero reconnects, no error, normal ChatGPT/web/Shadowrocket, global environment unset.
-- No remote repository was configured or contacted, and nothing was pushed.
+- The public repository and release were published only after the reviewed source and asset checks passed.
 
 ## Known limitations
 
@@ -38,7 +38,7 @@ Status: **READY FOR PUBLIC-003 REVIEW**
 - A usable HTTP and HTTPS System Proxy must be enabled and reachable at launch time.
 - System Proxy discovery is not a substitute for TUN; traffic outside applications honoring the macOS System Proxy remains outside this tool's scope.
 - The app is ad-hoc signed, not notarized. Gatekeeper may require the normal macOS user-approved open flow for an app downloaded from another machine.
-- The current public candidate has passed the required RC2 regressions; final user/planner review is still required before any public publication.
+- The public release has passed post-publication download and URL verification.
 
 ## Local Git history
 
@@ -50,7 +50,7 @@ Fresh local history was created with these commits:
 4. `Prepare v1.1.0 release candidate` (RC1)
 5. `Harden RC2 launcher and release pipeline`
 
-Generated ZIP and SHA256 files are intentionally ignored by Git and remain local Release Asset candidates.
+Generated ZIP and SHA256 files are intentionally ignored by Git and are published only as Release Assets.
 
 ## RC2 hardening results
 
@@ -62,7 +62,7 @@ Generated ZIP and SHA256 files are intentionally ignored by Git and remain local
 - App display name: `Clash Bridge`; project/repository identity remains `Clash Bridge for Codex` / `clash-bridge-for-codex-macos`.
 - Git generated artifact policy: `dist/*.app`, `dist/*.zip`, and `dist/*.sha256` are ignored; the ZIP and checksum remain local release outputs.
 - Privacy scan: PASS for tracked public files and decompressed release ZIP, with documentation references distinguished from runtime literals.
-- Remote/push: none; no GitHub repository, remote, or release was created.
+- Remote/push: completed only for the approved public repository; generated assets remain untracked locally.
 
 ## Search / AI discoverability preparation
 
@@ -75,4 +75,23 @@ Generated ZIP and SHA256 files are intentionally ignored by Git and remain local
 
 ## PUBLIC-003 readiness
 
-The repository is ready for a separate PUBLIC-003 decision covering GitHub repository creation, remote configuration, push, topics, GitHub Pages activation, Release Assets, and post-publication download verification. Those actions have not been performed in this phase.
+## PUBLIC-003 final publication
+
+- Repository: https://github.com/austinzheguo/clash-bridge-for-codex-macos
+- Visibility: Public
+- Default branch: `main`
+- Final main commit: `f07b6765362ed4cb3cfe9902cd4900e0d3ce42b1`
+- Description: `Fix Codex Reconnecting 1/5 behind Clash / Clash Verge System Proxy on macOS · 解决 Codex 反复“重新连接”`
+- Topics: `codex`, `openai-codex`, `clash`, `clash-verge`, `clash-verge-rev`, `mihomo`, `macos`, `proxy`, `system-proxy`, `reconnecting`, `websocket`, `http-proxy`, `codex-proxy`
+- Issues: enabled; Wiki: disabled.
+- Private Vulnerability Reporting: unavailable through the current API/account settings; SECURITY.md documents the GitHub Security-page path when available.
+- Release: https://github.com/austinzheguo/clash-bridge-for-codex-macos/releases/tag/v1.1.0
+- Tag: `v1.1.0`, non-draft, non-prerelease.
+- Assets: `Clash-Bridge-for-Codex-v1.1.0-macOS.zip` and `.sha256`.
+- Download verification: re-downloaded from the public Release; `shasum -a 256 -c` passed and matched `75a0c0bf052b080d5f63f2dfd5d119602a00a05968cc7cdb440afc2e36de63bd`.
+- GitHub Pages: https://austinzheguo.github.io/clash-bridge-for-codex-macos/; public, source `main:/docs`, status `built`.
+- Pages routes verified with HTTP 200: homepage, English/Chinese FAQ, English/Chinese troubleshooting, and release notes.
+- FAQ: https://austinzheguo.github.io/clash-bridge-for-codex-macos/faq.html and `faq.zh-CN.html`.
+- Troubleshooting: https://austinzheguo.github.io/clash-bridge-for-codex-macos/troubleshooting.html and `troubleshooting.zh-CN.html`.
+- Searchability audit: English and Chinese high-priority phrases are present in real headings, first-screen symptom descriptions, FAQ answers, and troubleshooting text; no hidden keyword block was used.
+- No search engine or AI indexing guarantee is claimed.
