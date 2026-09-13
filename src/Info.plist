@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleDisplayName</key>
+  <string>Clash Bridge for Codex</string>
+  <key>CFBundleExecutable</key>
+  <string>Clash Bridge for Codex</string>
+  <key>CFBundleIconFile</key>
+  <string>ClashBridge.icns</string>
+  <key>CFBundleIdentifier</key>
+  <string>com.clashbridgeforcodex.macos</string>
+  <key>CFBundleName</key>
+  <string>Clash Bridge for Codex</string>
+  <key>CFBundlePackageType</key>
+  <string>APPL</string>
+  <key>CFBundleShortVersionString</key>
+  <string>1.1.0</string>
+  <key>CFBundleVersion</key>
+  <string>1.1.0</string>
+  <key>LSUIElement</key>
+  <true/>
+</dict>
+</plist>
