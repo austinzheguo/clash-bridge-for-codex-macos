@@ -15,7 +15,7 @@ The release candidate is ad-hoc signed for personal use and is not notarized. Fo
 If you understand the risk and only want to remove the quarantine attribute from the downloaded project app, target that app explicitly:
 
 ```text
-xattr -d com.apple.quarantine "/path/to/Clash Bridge for Codex.app"
+xattr -d com.apple.quarantine "/path/to/Clash Bridge.app"
 ```
 
 The project does not run this command automatically.

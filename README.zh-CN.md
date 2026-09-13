@@ -4,13 +4,13 @@
 
 [English README → README.md](README.md)
 
-适用于以下情况：
+Clash Bridge 是一个非官方的 Codex mode 启动器，适用于以下情况：
 
 - macOS；
 - Clash Verge / Clash Verge Rev；
 - System Proxy 开启、TUN 关闭；
 - 浏览器与 ChatGPT 正常；
-- Codex Desktop 反复出现 `Reconnecting 1/5 ... 5/5`；
+- ChatGPT Desktop App 中的 Codex mode（包括旧版 Codex.app）反复出现 `Reconnecting 1/5 ... 5/5`；
 - Codex 新会话可能等待约 1–2 分钟。
 
 Bridge 的工作流程是：
@@ -27,13 +27,13 @@ Bridge 的工作流程是：
 
 ↓
 
-启动官方 Codex
+启动官方 ChatGPT Desktop App 的 Codex mode
 
 ↓
 
 Bridge 退出
 
-它不是代理软件、VPN、Clash 节点、Codex 修改版，也不是 OpenAI 官方工具。它不会修改 Clash、Shadowrocket、`~/.codex/.env`、全局 launchctl 代理环境或官方 Codex.app，也不会写死 Clash 的 7897 或 Shadowrocket 的 1082。
+它不是代理软件、VPN、Clash 节点、Codex 修改版，也不是 OpenAI 官方工具。它不会修改 Clash、Shadowrocket、`~/.codex/.env`、全局 launchctl 代理环境或官方 OpenAI Desktop App，也不会写死代理端口。
 
 ## 开发者本机实测结果
 
@@ -48,7 +48,7 @@ Bridge 退出
 
 ## 兼容性
 
-已测试：macOS、Codex Desktop、Clash Verge / Clash Verge Rev、Shadowrocket、HTTP/HTTPS System Proxy。
+已测试：macOS、ChatGPT Desktop App 的 Codex mode（包括旧版 Codex.app）、Clash Verge / Clash Verge Rev、Shadowrocket、HTTP/HTTPS System Proxy。
 
 不需要 TUN。PAC-only proxy、仅 SOCKS System Proxy、认证企业代理及其他特殊 macOS 代理配置尚未保证支持。
 
@@ -56,10 +56,17 @@ Bridge 退出
 
 1. 下载 ZIP 及 SHA-256 文件并校验。
 2. 解压到 `/Applications` 或 `~/Applications`。
-3. 从官方来源安装官方 Codex.app。
+3. 从 OpenAI 官方来源安装官方 ChatGPT Desktop App，并使用 Codex mode。
 4. 开启所需的 macOS System Proxy。
 5. 完全退出已有 Codex。
-6. 双击 `Clash Bridge for Codex.app`。
+6. 双击 `Clash Bridge.app`。
+
+校验下载文件：
+
+```text
+cd ~/Downloads
+shasum -a 256 -c Clash-Bridge-for-Codex-v1.1.0-macOS.zip.sha256
+```
 
 本项目不捆绑或重新分发 Codex。当前版本是个人使用的 ad-hoc 签名版本，没有 Developer ID 或 notarization。Gatekeeper 说明见 [故障排查](docs/troubleshooting.zh-CN.md)。
 

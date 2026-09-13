@@ -15,7 +15,7 @@
 如明确理解风险，只想移除下载的本项目 app 自身的 quarantine 属性，可以针对该 app 使用：
 
 ```text
-xattr -d com.apple.quarantine "/path/to/Clash Bridge for Codex.app"
+xattr -d com.apple.quarantine "/path/to/Clash Bridge.app"
 ```
 
 项目不会自动执行这条命令。

@@ -6,14 +6,14 @@
 
 [中文说明 → README.zh-CN.md](README.zh-CN.md)
 
-Clash Bridge for Codex is for a macOS setup where browsers and ChatGPT work through Clash Verge / Clash Verge Rev or Shadowrocket, while Codex Desktop repeatedly shows `Reconnecting 1/5 ... 5/5` or takes one to two minutes to become usable under System Proxy.
+Clash Bridge is an unofficial launcher for Codex mode. It is for a macOS setup where browsers and ChatGPT work through Clash Verge / Clash Verge Rev or Shadowrocket, while Codex mode in the ChatGPT desktop app repeatedly shows `Reconnecting 1/5 ... 5/5` or takes one to two minutes to become usable under System Proxy.
 
 The Bridge:
 
 1. reads the active macOS HTTP/HTTPS System Proxy;
 2. checks that its local listener is reachable;
 3. passes `HTTP_PROXY`, `HTTPS_PROXY`, `http_proxy`, `https_proxy`, `NO_PROXY`, and `no_proxy` only to the Codex process tree;
-4. starts the official Codex.app and exits.
+4. starts the official ChatGPT desktop app (Codex mode) and exits.
 
 It is not a proxy server, VPN, Clash node, modified Codex, or OpenAI tool. It does not modify Clash, Shadowrocket, `~/.codex/.env`, global launchctl environment, or the official Codex.app. It does not hardcode common proxy ports.
 
@@ -33,7 +33,7 @@ These are developer-machine observations, not a performance guarantee for every 
 | Configuration | Status |
 |---|---|
 | macOS | Tested |
-| Codex Desktop | Tested |
+| ChatGPT desktop app (Codex mode), including legacy Codex.app installations | Tested |
 | Clash Verge / Clash Verge Rev | Tested with HTTP/HTTPS System Proxy |
 | Shadowrocket | Tested with HTTP/HTTPS System Proxy |
 | TUN | Not required |
@@ -45,11 +45,18 @@ These are developer-machine observations, not a performance guarantee for every 
 
 1. Download the release ZIP and its SHA-256 file.
 2. Verify the checksum.
-3. Extract `Clash Bridge for Codex.app` into `/Applications` or `~/Applications`.
-4. Install the official Codex.app from its official source.
+3. Extract `Clash Bridge.app` into `/Applications` or `~/Applications`.
+4. Install the official OpenAI desktop app from its official source and use Codex mode.
 5. Enable the desired macOS System Proxy.
-6. Fully quit any existing Codex process.
-7. Double-click `Clash Bridge for Codex.app`.
+6. Fully quit any existing ChatGPT/Codex process.
+7. Double-click `Clash Bridge.app`.
+
+To verify a downloaded release:
+
+```text
+cd ~/Downloads
+shasum -a 256 -c Clash-Bridge-for-Codex-v1.1.0-macOS.zip.sha256
+```
 
 The project does not bundle or redistribute Codex. The build is ad-hoc signed for personal use and is not Developer ID signed or notarized. See [troubleshooting](docs/troubleshooting.md) for Gatekeeper notes.
 

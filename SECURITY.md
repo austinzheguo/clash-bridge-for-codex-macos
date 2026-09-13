@@ -14,4 +14,4 @@ The launcher:
 
 At launch it reads the enabled state, host, and port of the current macOS HTTP/HTTPS System Proxy and checks whether the local listener is reachable. It then passes process-scoped proxy variables only to the Codex process tree.
 
-Please report security issues privately to the project maintainer before public disclosure. Do not include proxy credentials, subscriptions, UUIDs, tokens, or private configuration in reports.
+After the GitHub repository is published, the maintainer should enable GitHub Private Vulnerability Reporting if available and use the repository Security page for private reports. Until that channel exists, do not submit proxy credentials, subscriptions, UUIDs, tokens, or private configuration in public issues.

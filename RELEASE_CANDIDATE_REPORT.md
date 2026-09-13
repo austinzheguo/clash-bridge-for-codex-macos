@@ -1,23 +1,25 @@
 # Release Candidate Report
 
-Status: **READY FOR USER REVIEW**
+Status: **READY FOR FINAL REVIEW**
 
 ## Identity
 
 - Project: Clash Bridge for Codex
 - Chinese name: Codex Clash 代理桥
 - Repository slug: `clash-bridge-for-codex-macos`
-- App: `Clash Bridge for Codex.app`
+- App: `Clash Bridge.app`
 - Version: `1.1.0`
 - Candidate archive: `dist/Clash-Bridge-for-Codex-v1.1.0-macOS.zip`
-- SHA256: `3b59768ea9016d1ad49a5a270945d81f7bf3d7eed2bfafb4a97bda91bb611aac`
+- SHA256: `75a0c0bf052b080d5f63f2dfd5d119602a00a05968cc7cdb440afc2e36de63bd`
 
 ## Build and verification
 
 - `scripts/build.sh` builds from `src/` using macOS system tools and signs the newly generated app ad hoc.
 - Builds use an isolated temporary output directory so Finder/file-provider metadata cannot invalidate signing in a managed Documents folder.
 - `scripts/test.sh`: PASS.
-- Portability checks: PASS for dynamic ports, proxy disabled, dead listener, missing Codex, arbitrary app location, process-scoped environment, and unchanged global `launchctl` proxy environment.
+- Portability checks: PASS for dynamic ports, IPv4/hostname/IPv6 URL construction, proxy disabled, dead listener, ChatGPT.app and Codex.app discovery, wrong bundle rejection, arbitrary app location, process-scoped environment, and unchanged global `launchctl` proxy environment.
+- The test suite uses only macOS system tools; its prior ripgrep dependency was removed.
+- `scripts/package-release.sh` runs the full test suite, builds, generates the checksum, runs `shasum -a 256 -c`, extracts the ZIP, lints the plist, and performs strict deep signature verification.
 - Release ZIP: extracted plist lint and deep strict signature verification passed.
 - The ZIP contains only the app bundle; it contains no project history, private evidence, configuration backup, credentials, or subscription data.
 
@@ -25,8 +27,9 @@ Status: **READY FOR USER REVIEW**
 
 - No private absolute paths, user names, node addresses, credentials, UUIDs, tokens, or subscription URLs are present in tracked public source or documentation.
 - The launcher does not hardcode Clash or Shadowrocket ports and does not use vendor-specific paths.
-- The launcher does not modify the official `/Applications/Codex.app` and does not use global `launchctl setenv` or `unsetenv`.
-- No public network experiment was run during this release-candidate preparation.
+- The launcher does not modify the official OpenAI desktop app and does not use global `launchctl setenv` or `unsetenv`.
+- RC2 real regression `PUBLIC-RC2-CLASH-01`: approximately 10 seconds, zero reconnects, no error, normal ChatGPT/web/Clash, global environment unset.
+- RC2 real regression `PUBLIC-RC2-SHADOWROCKET-01`: approximately 6 seconds, zero reconnects, no error, normal ChatGPT/web/Shadowrocket, global environment unset.
 - No remote repository was configured or contacted, and nothing was pushed.
 
 ## Known limitations
@@ -35,7 +38,7 @@ Status: **READY FOR USER REVIEW**
 - A usable HTTP and HTTPS System Proxy must be enabled and reachable at launch time.
 - System Proxy discovery is not a substitute for TUN; traffic outside applications honoring the macOS System Proxy remains outside this tool's scope.
 - The app is ad-hoc signed, not notarized. Gatekeeper may require the normal macOS user-approved open flow for an app downloaded from another machine.
-- The current public candidate has been prepared from the already validated Clash Verge and Shadowrocket behavior, but user review is still required before any public publication.
+- The current public candidate has passed the required RC2 regressions; final user/planner review is still required before any public publication.
 
 ## Local Git history
 
@@ -44,5 +47,19 @@ Fresh local history was created with these commits:
 1. `Initial public launcher source`
 2. `Add bilingual public documentation`
 3. `Add reproducible build and portability tests`
-4. This release-candidate report and release artifacts are pending in the final local commit.
+4. `Prepare v1.1.0 release candidate` (RC1)
+5. `Harden RC2 launcher and release pipeline`
 
+Generated ZIP and SHA256 files are intentionally ignored by Git and remain local Release Asset candidates.
+
+## RC2 hardening results
+
+- `rg` dependency: eliminated from the test suite; plain macOS system tools are sufficient.
+- SHA256 self-check: PASS; checksum file contains the ZIP basename and `shasum -a 256 -c` returned `OK`.
+- IPv6 test: PASS; `::1` becomes `http://[::1]:PORT`, alongside IPv4 and hostname coverage.
+- App discovery: PASS for ChatGPT.app and legacy Codex.app candidates with `com.openai.codex`; wrong bundle IDs and arbitrary same-name apps are rejected.
+- Process-scoped environment integration: PASS for all six proxy variables; global launchctl environment unchanged.
+- App display name: `Clash Bridge`; project/repository identity remains `Clash Bridge for Codex` / `clash-bridge-for-codex-macos`.
+- Git generated artifact policy: `dist/*.app`, `dist/*.zip`, and `dist/*.sha256` are ignored; the ZIP and checksum remain local release outputs.
+- Privacy scan: PASS for tracked public files and decompressed release ZIP, with documentation references distinguished from runtime literals.
+- Remote/push: none; no GitHub repository, remote, or release was created.

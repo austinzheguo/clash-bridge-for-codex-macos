@@ -1,3 +1,5 @@
 .DS_Store
-dist/Clash Bridge for Codex.app/
+dist/*.app/
+dist/*.zip
+dist/*.sha256
 *.swp
