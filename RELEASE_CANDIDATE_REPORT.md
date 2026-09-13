@@ -1,6 +1,6 @@
 # Release Candidate Report
 
-Status: **READY FOR FINAL REVIEW**
+Status: **READY FOR PUBLIC-003 REVIEW**
 
 ## Identity
 
@@ -63,3 +63,16 @@ Generated ZIP and SHA256 files are intentionally ignored by Git and remain local
 - Git generated artifact policy: `dist/*.app`, `dist/*.zip`, and `dist/*.sha256` are ignored; the ZIP and checksum remain local release outputs.
 - Privacy scan: PASS for tracked public files and decompressed release ZIP, with documentation references distinguished from runtime literals.
 - Remote/push: none; no GitHub repository, remote, or release was created.
+
+## Search / AI discoverability preparation
+
+- README and Chinese README now put the real symptoms in the first screen: Codex Reconnecting 1/5 ... 5/5, slow new sessions, browser/ChatGPT working, Clash Verge System Proxy enabled, and TUN disabled.
+- Natural English coverage includes Codex Clash Verge, Codex reconnecting, Codex System Proxy, Codex macOS proxy, HTTP_PROXY/HTTPS_PROXY, WebSocket proxy, and related user descriptions. Natural Chinese coverage includes Codex 重新连接, Codex Clash Verge, Codex 系统代理, Codex 连接慢, and related user descriptions.
+- Added bilingual FAQ pages, search-oriented troubleshooting headings, a bilingual static Pages landing page, release-note wording, and a privacy-safe bug report template.
+- Linked relevant upstream `openai/codex` issues as context; the project is explicitly described as an independent third-party workaround, not an OpenAI fix.
+- Added proposed repository description and topics in `docs/publication-metadata.md`; no GitHub repository or API action was performed.
+- No `llms.txt` dependency was introduced and no search-engine or AI ranking guarantee is claimed.
+
+## PUBLIC-003 readiness
+
+The repository is ready for a separate PUBLIC-003 decision covering GitHub repository creation, remote configuration, push, topics, GitHub Pages activation, Release Assets, and post-publication download verification. Those actions have not been performed in this phase.
